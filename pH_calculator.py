@@ -2,6 +2,7 @@ import json
 import numpy as np
 import math
 
+
 def alpha():
     try:
         with open('all_TPEN_DERIVATIVE_records.json', 'r', encoding = 'utf-8') as f:
@@ -10,14 +11,9 @@ def alpha():
 
             filtered_data = []
 
-            for aqueous in json_data["aqueous phase"]:
-                aqueous_data = {
-                "solutes" == aqueous["solutes"],
-                "pH" == aqueous["pH"],
-                "volume" == aqueous["volume"],}
-                            
-            filtered_data.append(aqueous_data)
-                        
+            for record in json_data:
+                filtered_data.append(record["aqueous phase"])
+                              
             if isinstance("pH", (int, float)):
                 pH = np.array("pH", dtype=float)
                             
@@ -31,4 +27,5 @@ def alpha():
 
     print(h3o)
 
-    alpha()
+
+alpha()
